@@ -11,5 +11,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     container:
       image: python:3.9-slim
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install flake8 nose
+
+      - name: Run flake8 lint
+        run: |
+          flake8 .
+
+      - name: Run unit tests with nose
+        run: |
+          nosetests
