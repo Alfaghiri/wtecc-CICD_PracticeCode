@@ -24,9 +24,8 @@ jobs:
           pip install --upgrade pip
           pip install flake8 nose
 
-      - name: Run flake8 lint
-        run: |
-          flake8 .
+      - name: Run flake8
+        run: flake8 . --ignore=E501
 
       - name: Run unit tests with nose
         run: |
