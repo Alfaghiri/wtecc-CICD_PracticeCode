@@ -21,8 +21,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          pip install flake8 nose
+          pip install -r requirements.txt
+          pip install nose-spec
 
       - name: Run flake8
         run: flake8 . --ignore=E501
